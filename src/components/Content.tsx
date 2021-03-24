@@ -32,7 +32,7 @@ export function Content({selectedGenreId}: ComponentProps) {
   const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
 
   useEffect(() => {
-    api.get<MovieProps[]>(`movies/?Genre_id=${selectedGenreId}`).then(response => {
+    api.get<MovieProps[]>(`movies/genre/${selectedGenreId}`).then(response => {
       setMovies(response.data);
     });
 
